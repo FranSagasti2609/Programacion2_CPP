@@ -8,33 +8,27 @@ typedef struct {
 } Producto;
 
 std::vector <Producto> inventario; 
-int inventario_size = 0;
 
 //Funcion que agrega un producto a un vector de productos
 void agregar_producto(Producto p){
-    inventario.at(inventario.size())=p; //Agrego al ultimo lugar mediante "size" el producto p
-    inventario_size++; 
+    inventario.push_back(p); //Agrego al ultimo lugar mediante "push_back" el producto p
 }
+
 //Funcion que muestra cada producto del vector, detallando nombre y cantidad
 void print_inventario() {
     //En este for podriamos utilizar como limite "inventario.size()"
-    for (int i = 0; i < inventario_size; i++) {
-        std::cout << "Nombre del producto: ", inventario.at(i).nombre," Cantidad: ", inventario.at(i).cantidad;
+    for (int i = 0; i < inventario.size(); i++) {
+        std::cout << "Nombre del producto: " << inventario.at(i).nombre << " Cantidad: " << inventario.at(i).cantidad << std::endl;
     }
 }
+
 //Funcion que elimina un producto del vector
 void eliminar_producto(Producto p){
-    //Podemos usar la funcion "erase", se utiliza "nombre".erase(indice_elemento_a_borrar);
-    //Solucion Llevar a p a la ultima posicion y borrarlo, usando push_back
-    inventario.push_back(p);
-    inventario.erase(inventario.end()); //Borro el ultimo elemento, que es p.
-    inventario_size--;
+
 }
+
 //Funcion que busca un producto en el vector
 void buscar_producto(Producto p){
-    for(int i = 0; i<inventario_size; i++){
-
-    }
 
 }
 
@@ -42,13 +36,17 @@ void buscar_producto(Producto p){
 int main() {
     inventario.resize(0); //Inicializo mi vector "vacio"
 
-    Producto pera, banana;
-    pera.cantidad = 20;
-    pera.nombre = "Pera";
-    banana.cantidad=23;
+    Producto banana, pera;
     banana.nombre = "Banana";
-    agregar_producto(pera);
+    banana.cantidad = 20;
+    pera.nombre = "Pera";
+    pera.cantidad = 34;
+
     agregar_producto(banana);
+    agregar_producto(pera);
+    print_inventario(); //Funciona bien!
+
+    eliminar_producto(pera);
     print_inventario();
     return 0;
 }
