@@ -24,30 +24,47 @@ void print_inventario() {
 
 //Funcion que elimina un producto del vector
 void eliminar_producto(Producto p){
-
+    for (int i = 0; i < inventario.size(); i++) {
+        if(p.nombre == inventario.at(i).nombre){
+            inventario.erase(inventario.begin() + i);
+            std::cout << "Producto eliminado con exito." <<std::endl;
+            break;
+        }
+    }
 }
 
 //Funcion que busca un producto en el vector
-void buscar_producto(Producto p){
-
+bool buscar_producto(Producto p){
+    for (int i = 0; i < inventario.size(); i++) {
+        if(p.nombre == inventario.at(i).nombre){
+            std::cout << "Producto encontrado." << std::endl;
+            return true;
+        }
+    } 
+    std::cout << "Producto NO encontrado." << std::endl;
+    return false;
 }
 
 //Funcion principal
 int main() {
     inventario.resize(0); //Inicializo mi vector "vacio"
 
-    Producto banana, pera;
+    Producto banana, pera, manzana;
     banana.nombre = "Banana";
     banana.cantidad = 20;
     pera.nombre = "Pera";
     pera.cantidad = 34;
+    manzana.nombre = "Manzana";
+    manzana.cantidad = 45;
 
     agregar_producto(banana);
     agregar_producto(pera);
-    print_inventario(); //Funciona bien!
-
+    agregar_producto(manzana);
+    print_inventario(); 
     eliminar_producto(pera);
-    print_inventario();
+    print_inventario(); 
+
+
     return 0;
 }
 
