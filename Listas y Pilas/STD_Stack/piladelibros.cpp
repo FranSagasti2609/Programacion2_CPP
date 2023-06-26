@@ -10,23 +10,29 @@
 
 int main(){
     std::stack <Libro> stacklibros; //Definimos una pila de libros
-    
-    Libro Prog_1, Mate1, bio4to; //Ingresamos algunos ejemplos
-    Prog_1.nombre = "Programacion en C - Tomo 1";
-    Mate1.nombre = "Fundamentos de la Matematica. Edicion 2008";
-    bio4to.nombre = "Biologia 4to Año";
+    Libro prog_1, mate1, bio4to; //Ingresamos algunos ejemplos
+     prog_1 = {"Programacion en C - Tomo 1", 1, 500};
+     mate1 = {"Fundamentos de la Matematica. Edicion 2008", 2, 350};
+     bio4to = {"Biologia 4to Año", 3, 470};
 
-    stacklibros.push(Prog_1);
+    stacklibros.push(prog_1);
      //std::cout << "Nombre del libro agregado al sistema: " << stacklibros.top().nombre << std::endl;
-    stacklibros.push(Mate1);
+    stacklibros.push(mate1);
      //std::cout << "Nombre del libro agregado al sistema: " << stacklibros.top().nombre << std::endl;
     stacklibros.push(bio4to);
      //std::cout << "Nombre del libro agregado al sistema: " << stacklibros.top().nombre << std::endl;
-      
-      
-        std::cout << "Primer elemento en mi lista: " << stacklibros.top().nombre << std::endl;
-        std::cout << "Cant. De libros: " << stacklibros.size() << std::endl;
-        std::cout << "Caja de libros vacía? " << stacklibros.empty() << std::endl;
-        
+
+    //Como mostrar mi pila.
+    std::stack <Libro> stackCopia = stacklibros;
+    while(!stackCopia.empty()) {
+        std::cout << "Nombre del libro: " << stackCopia.top().nombre << std::endl;
+        std::cout << "ID del libro: " << stackCopia.top().ID_libro << std::endl;
+        std::cout << "Precio del libro: " << stackCopia.top().precio << std::endl;
+        std::cout << "------------------------" << std::endl;
+        stackCopia.pop();
+    }   
+    std::cout << "Longitud de la pila original: " << stacklibros.size() <<std::endl;
+    std::cout << "Longitud de la pila copia: " << stackCopia.size() <<std::endl;
+
     return 0;  
 }
