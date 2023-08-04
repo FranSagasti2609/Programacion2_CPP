@@ -17,7 +17,7 @@ int main() {
     //Sumar todos los numeros excepto el mayor
     // extra, ordeno de menor a mayor y luego en el accumulate en "ventas.end()-1" no sumo el último valor(el mayor)
     std::sort(ventas.begin(), ventas.end());
-    total = std::accumulate(ventas.begin(), ventas.end()-1, 0);
+    total = std::accumulate(ventas.begin()+3, ventas.end(), 0);
     std::cout<<"El total de ventas es: " <<total<< std::endl;
 
     return 0;
