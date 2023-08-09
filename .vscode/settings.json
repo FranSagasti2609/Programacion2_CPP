@@ -79,6 +79,7 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp",
-    "forward_list": "cpp"
+    "forward_list": "cpp",
+    "set": "cpp"
   }
 }
