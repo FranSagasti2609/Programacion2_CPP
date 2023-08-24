@@ -18,7 +18,7 @@ int main(){
     Libros.insert({01, "Poesia Greco-Romana"});
     Libros.insert({02, "Matematica Discreta"});
         //Suplantar elemento en una cierta key
-    //Libros.insert_or_assign({02, "Programacion con Juancho"});
+    Libros.insert_or_assign(02, "Programacion con Juancho");
         //Y si intento insertar en una key ya asignada?
     Libros.insert({02, "Recetas 2023."}); //R: No se asigna!
 
