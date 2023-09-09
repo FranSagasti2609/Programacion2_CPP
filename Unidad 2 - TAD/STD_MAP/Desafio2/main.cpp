@@ -60,7 +60,6 @@ int main(){
         }
         it++;
     }
-
     //Mostrar diccionario
     it_cont = contador_palabras.begin();
     while(it_cont!= contador_palabras.end()){
