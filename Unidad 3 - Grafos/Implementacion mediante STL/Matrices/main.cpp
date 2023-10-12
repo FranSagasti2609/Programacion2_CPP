@@ -14,7 +14,7 @@ int main() {
 	miGrafo.agregarVertice(estudiante1);
 	miGrafo.agregarVertice(estudiante2);
 	miGrafo.agregarVertice(estudiante3);
-	miGrafo.agregarVertice(estudiante4);s
+	miGrafo.agregarVertice(estudiante4);
 
 	
 	miGrafo.agregarArista(estudiante3, estudiante4);
